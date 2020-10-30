@@ -10,11 +10,27 @@
     "MATTERMOST_DOWNLOAD_URI": {
         "description": "The URI to the compiled Mattermost binary you would like to run. Defaults to latest release. See https://www.mattermost.org/download/ for download links.",
         "required": true,
-        "value": "https://releases.mattermost.com/5.26.0/mattermost-5.26.0-linux-amd64.tar.gz"
+        "value": "https://releases.mattermost.com/5.28.1/mattermost-5.28.1-linux-amd64.tar.gz"
+    },
+     "CUSTOMIZATION__SITENAME": {
+        "description": "Site name",
+       "required": false,
+        "value": "Mattermost"
+    },
+     "CUSTOMIZATION__DESCRIPTION": {
+        "description": "Site description",
+       "required": false,
+        "value": ""
     },
     "FILE_SETTINGS__DRIVER_NAME": {
         "description": "The type of file storage to use. Must be local or amazons3. WARNING: If local, files will be periodically wiped when the dyno restarts. Only use local for temporary preview instances.",
+        "required": true,
         "value": "local"
+    },
+    "SERVICE_SETTINGS__SITEURL": {
+        "description": "Site url, ex: https://myapp.herokuapp.com/ ",
+      "required": true,
+        "value": ""
     },
     "FILE_SETTINGS__AMAZON_S3_ACCESS_KEY_ID": {
         "description": "The access key for your Amazon S3. Only required for driver name amazons3.",
@@ -35,6 +51,108 @@
         "description": "The AWS region you selected when creating your S3 bucket. Refer to AWS Reference Documentation (http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region) and choose this variable from the Region column.",
         "required": false,
         "value": "us-east-1"
+    },
+    "EMAIL_SETTINGS__SEND_EMAIL_NOTIFICATIONS": {
+        "description": "Send email notifications",
+        "required": true,
+        "value": "false"
+    },
+
+
+"EMAIL_SETTINGS__REQUIRE_EMAIL_VERIFICATION": {
+        "description": "Require email verification",
+        "required": true,
+        "value": "false"
+    },
+"EMAIL_SETTINGS__FEEDBACK_NAME": {
+        "description": "Sender name for email notifications",
+        "required": false,
+        "value": ""
+    },
+
+"EMAIL_SETTINGS__FEEDBACK_EMAIL": {
+        "description": "Sender email for email notifications",
+        "required": false,
+        "value": ""
+    },
+"EMAIL_SETTINGS__FEEDBACK_ORGANIZATION": {
+        "description": "Notification Footer Mailing Address",
+        "required": false,
+        "value": ""
+    },
+"EMAIL_SETTINGS__SMTP_AUTH_ENABLED": {
+        "description": "Enable smtp authentication for email notifications",
+        "required": true,
+        "value": "false"
+    },
+"EMAIL_SETTINGS__SMTP_USERNAME" :{
+        "description": "Username for authentication for email notifications",
+        "required": false,
+        "value": ""
+    },
+"EMAIL_SETTINGS__SMTP_PASSWORD" :{
+        "description": "Password for authentication for email notifications",
+        "required": false,
+        "value": ""
+    },
+
+"EMAIL_SETTINGS__SMTP_SERVER" :{
+        "description": "Smtp server for email notifications",
+        "required": false,
+        "value": ""
+    },
+"EMAIL_SETTINGS__SMTP_PORT": {
+        "description": "Smtp server for email notifications",
+        "required": false,
+        "value": ""
+    },
+"EMAIL_SETTINGS__CONNECTION_SECURITY" :{
+        "description": "TLS , STARTTLS or empty for connection security for email notifications",
+        "required": false,
+        "value": ""
+    },
+"EMAIL_SETTINGS__INVITE_SALT" :{
+        "description": "Invite link salt string",
+        "required": true,
+        "value": "bjlSR4QqkXFBr7TP4oDzlfZmcNuH9YoS"
+    },
+"PUSH__SETTINGS__SEND_PUSH_NOTIFICATIONS" :{
+        "description": "Send push notifications",
+        "required": false,
+        "value": "false"
+    },
+
+"PUSH__SETTINGS__PUSH_NOTIFICATION_SERVER" :{
+        "description": "Push notification server , example : https://push-test.mattermost.com",
+        "required": false,
+        "value": ""
+    },
+"PUSH__SETTINGS__PUSH_NOTIFICATION_CONTENTS" :{
+        "description": "Push notification server: generic_no_channel , generic ,  full , id_loaded or empty",
+        "required": false,
+        "value": "generic"
+    },
+
+"SESSION_LENGTH__WEB" :{
+        "description": "Session length for email and AD/LDAP authentication (days)",
+        "required": false,
+        "value": "30"
+    },
+"SESSION_LENGTH__MOBILE" :{
+        "description": "Session length for mobile apps (days)",
+        "required": false,
+        "value": "30"
+    },
+"SESSION_LENGTH__SSO" :{
+        "description": "Session length for SSO authentication (days)",
+        "required": false,
+        "value": "30"
+    }
+,
+"PLUGIN_SETTINGS_ENABLE_UPLOADS" :{
+        "description": "Allow plugins uploads",
+        "required": false,
+        "value": "true"
     }
   }
 }
